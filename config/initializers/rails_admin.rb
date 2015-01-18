@@ -1,21 +1,4 @@
 RailsAdmin.config do |config|
-
-  ### Popular gems integration
-
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
-
-  ## == Cancan ==
-  # config.authorize_with :cancan
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -26,9 +9,39 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+  end
 
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+  config.model 'Ranking' do
+    field :ranking_for_day
+    field :score
+    field :rig
+    field :user
+
+    field :poor_event_sequence
+    field :poor_comments
+    field :blank_safety_meeting
+    field :missing_rig_crew_travel_details
+    field :not_using_device
+    field :not_syncing_device
+    field :missing_tubing_details
+    field :missing_events
+    field :missing_shut_in_overnight_details
+    field :missing_pressure_details
+    field :poor_rig_up_rig_down_accuracy
+    field :did_not_stop_timer
+    field :missing_well_control_details
+    field :poor_safety_personnel_details
+    field :missing_waiting_on_details
+    field :poor_well_control_comments
+    field :missing_failure_details
+    field :missing_tag_fill_details
+
+    configure :score do
+      read_only true
+    end
+
+    edit do
+      exclude_fields :created_at, :updated_at
+    end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118052735) do
+ActiveRecord::Schema.define(version: 20150118054850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150118052735) do
   create_table "rankings", force: true do |t|
     t.decimal  "score"
     t.integer  "user_id"
-    t.integer  "company_id"
     t.date     "ranking_for_day"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -55,9 +54,10 @@ ActiveRecord::Schema.define(version: 20150118052735) do
     t.boolean  "poor_well_control_comments"
     t.boolean  "missing_failure_details"
     t.boolean  "missing_tag_fill_details"
+    t.integer  "rig_id"
   end
 
-  add_index "rankings", ["company_id"], name: "index_rankings_on_company_id", using: :btree
+  add_index "rankings", ["rig_id"], name: "index_rankings_on_rig_id", using: :btree
   add_index "rankings", ["user_id"], name: "index_rankings_on_user_id", using: :btree
 
   create_table "rigs", force: true do |t|
