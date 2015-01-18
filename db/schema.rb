@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116030751) do
+ActiveRecord::Schema.define(version: 20150118052735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,25 @@ ActiveRecord::Schema.define(version: 20150116030751) do
     t.date     "ranking_for_day"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "poor_event_sequence"
+    t.boolean  "poor_comments"
+    t.boolean  "blank_safety_meeting"
+    t.boolean  "missing_rig_crew_travel_details"
+    t.boolean  "not_using_device"
+    t.boolean  "not_syncing_device"
+    t.boolean  "missing_tubing_details"
+    t.boolean  "poor_event_accuracy"
+    t.boolean  "missing_events"
+    t.boolean  "missing_shut_in_overnight_details"
+    t.boolean  "missing_pressure_details"
+    t.boolean  "poor_rig_up_rig_down_accuracy"
+    t.boolean  "did_not_stop_timer"
+    t.boolean  "missing_well_control_details"
+    t.boolean  "poor_safety_personnel_details"
+    t.boolean  "missing_waiting_on_details"
+    t.boolean  "poor_well_control_comments"
+    t.boolean  "missing_failure_details"
+    t.boolean  "missing_tag_fill_details"
   end
 
   add_index "rankings", ["company_id"], name: "index_rankings_on_company_id", using: :btree
