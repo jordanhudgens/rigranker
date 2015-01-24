@@ -14,6 +14,7 @@ RailsAdmin.config do |config|
   config.model 'Ranking' do
     field :ranking_for_day
     field :score
+    field :company
     field :rig
     field :user
 

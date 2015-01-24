@@ -1,4 +1,4 @@
 class Company < ActiveRecord::Base
-  has_many :users
   has_many :rigs
+  has_many :rankings
 end

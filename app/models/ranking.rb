@@ -4,7 +4,7 @@ class Ranking < ActiveRecord::Base
   belongs_to :deduction
   belongs_to :rig
 
-  validates_presence_of :ranking_for_day, :rig_id
+  validates_presence_of :ranking_for_day, :rig_id, :user_id, :company_id
 
   before_create :generate_score
 
@@ -29,7 +29,7 @@ class Ranking < ActiveRecord::Base
     if self.poor_well_control_comments then starting_score -= 1.00 end
     if self.missing_failure_details then starting_score -= 1.50 end
     if self.missing_tag_fill_details then starting_score -= 1.00 end
-    self.score = starting_score
+    self.score = starting_score.round(2)
   end
 
 end
