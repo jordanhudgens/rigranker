@@ -22,6 +22,7 @@ class RankingsController < ApplicationController
 
   def create
     @ranking = Ranking.new(ranking_params)
+    @ranking.user = current_user
     @ranking.save
     respond_with(@ranking)
   end
