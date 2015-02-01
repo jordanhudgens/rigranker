@@ -11,6 +11,16 @@ RailsAdmin.config do |config|
     show_in_app
   end
 
+  config.model 'User' do
+    field :name
+  end
+
+  config.model 'Rig' do
+    field :company
+    field :number
+    field :rankings
+  end
+
   config.model 'Ranking' do
     field :ranking_for_day
     field :score
