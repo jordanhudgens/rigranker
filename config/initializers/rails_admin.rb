@@ -15,10 +15,16 @@ RailsAdmin.config do |config|
     field :name
   end
 
+  config.model 'Company' do
+    edit do
+      exclude_fields :rankings, :rigs
+    end
+  end
+
   config.model 'Rig' do
-    field :company
-    field :number
-    field :rankings
+    edit do
+      exclude_fields :rankings
+    end
   end
 
   config.model 'Ranking' do
