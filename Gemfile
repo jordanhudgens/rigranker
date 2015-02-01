@@ -34,3 +34,6 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 # Because I'm lazy and don't have a lot of time to build out the view stuff
 gem 'rails_admin'
+
+# For debugging
+gem 'honeybadger'
