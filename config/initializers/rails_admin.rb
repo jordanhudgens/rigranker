@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
     field :ranking_for_day
     field :score
     field :company
-    field :rig
+    field :unit
     field :user
 
     field :poor_event_sequence
