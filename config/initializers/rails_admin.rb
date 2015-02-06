@@ -17,13 +17,7 @@ RailsAdmin.config do |config|
 
   config.model 'Company' do
     edit do
-      exclude_fields :rankings, :rigs
-    end
-  end
-
-  config.model 'Rig' do
-    edit do
-      exclude_fields :rankings
+      exclude_fields :rankings, :units
     end
   end
 
