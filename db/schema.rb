@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206143746) do
+ActiveRecord::Schema.define(version: 20150304165038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(version: 20150206143746) do
     t.boolean  "missing_failure_details"
     t.boolean  "missing_tag_fill_details"
     t.integer  "company_id"
-    t.integer  "unit_id"
+    t.integer  "rig_id"
   end
 
   add_index "rankings", ["company_id"], name: "index_rankings_on_company_id", using: :btree
-  add_index "rankings", ["unit_id"], name: "index_rankings_on_unit_id", using: :btree
+  add_index "rankings", ["rig_id"], name: "index_rankings_on_rig_id", using: :btree
   add_index "rankings", ["user_id"], name: "index_rankings_on_user_id", using: :btree
 
   create_table "rigs", force: true do |t|

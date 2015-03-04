@@ -1,0 +1,29 @@
+<%= form_for(@rig) do |f| %>
+  <% if @rig.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rig.errors.count, "error") %> prohibited this rig from being saved:</h2>
+
+      <ul>
+      <% @rig.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :company_id, class: 'control-label' %>
+    <div class="controls">
+      <%= collection_select( :rig, :company_id, Company.all, :id, :name, {}, { :multiple => false } ) %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

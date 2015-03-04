@@ -11,18 +11,109 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.text_field :score %>
+  <div class="control-group">
+    <%= f.label :rig_id, class: 'control-label' %>
+    <div class="controls">
+      <%= collection_select( :ranking, :rig_id, Rig.all, :id, :title, {}, { :multiple => false } ) %>
+    </div>
   </div>
+
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.label :poor_event_sequence %><br>
+    <%= f.check_box :poor_event_sequence %>
   </div>
+
   <div class="field">
-    <%= f.label :ranking_for_day %><br>
-    <%= f.date_select :ranking_for_day %>
+    <%= f.label :poor_comments %><br>
+    <%= f.check_box :poor_comments %>
   </div>
+
+  <div class="field">
+    <%= f.label :blank_safety_meeting %><br>
+    <%= f.check_box :blank_safety_meeting %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_rig_crew_travel_details %><br>
+    <%= f.check_box :missing_rig_crew_travel_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_using_device %><br>
+    <%= f.check_box :not_using_device %>
+  </div>
+
+  <div class="field">
+    <%= f.label :not_syncing_device %><br>
+    <%= f.check_box :not_syncing_device %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_tubing_details %><br>
+    <%= f.check_box :missing_tubing_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :poor_event_accuracy %><br>
+    <%= f.check_box :poor_event_accuracy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_events %><br>
+    <%= f.check_box :missing_events %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_shut_in_overnight_details %><br>
+    <%= f.check_box :missing_shut_in_overnight_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_pressure_details %><br>
+    <%= f.check_box :missing_pressure_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :poor_rig_up_rig_down_accuracy %><br>
+    <%= f.check_box :poor_rig_up_rig_down_accuracy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :did_not_stop_timer %><br>
+    <%= f.check_box :did_not_stop_timer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_well_control_details %><br>
+    <%= f.check_box :missing_well_control_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :poor_safety_personnel_details %><br>
+    <%= f.check_box :poor_safety_personnel_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_waiting_on_details %><br>
+    <%= f.check_box :missing_waiting_on_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :poor_well_control_comments %><br>
+    <%= f.check_box :poor_well_control_comments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_failure_details %><br>
+    <%= f.check_box :missing_failure_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :missing_tag_fill_details %><br>
+    <%= f.check_box :missing_tag_fill_details %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

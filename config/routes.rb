@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'rigs/index'
+
+  get 'rigs/show'
+
+  get 'rigs/new'
+
+  get 'rigs/edit'
+
+  get 'rigs/create'
+
+  get 'rigs/udpate'
+
+  get 'rigs/destroy'
+
   resources :deductions
 
   resources :rigs

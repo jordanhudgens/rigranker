@@ -1,14 +1,14 @@
 require 'test_helper'
 
 class RigsControllerTest < ActionController::TestCase
-  setup do
-    @rig = rigs(:one)
-  end
-
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:rigs)
+  end
+
+  test "should get show" do
+    get :show
+    assert_response :success
   end
 
   test "should get new" do
@@ -16,34 +16,24 @@ class RigsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create rig" do
-    assert_difference('Rig.count') do
-      post :create, rig: { company_id: @rig.company_id, number: @rig.number }
-    end
-
-    assert_redirected_to rig_path(assigns(:rig))
-  end
-
-  test "should show rig" do
-    get :show, id: @rig
-    assert_response :success
-  end
-
   test "should get edit" do
-    get :edit, id: @rig
+    get :edit
     assert_response :success
   end
 
-  test "should update rig" do
-    patch :update, id: @rig, rig: { company_id: @rig.company_id, number: @rig.number }
-    assert_redirected_to rig_path(assigns(:rig))
+  test "should get create" do
+    get :create
+    assert_response :success
   end
 
-  test "should destroy rig" do
-    assert_difference('Rig.count', -1) do
-      delete :destroy, id: @rig
-    end
-
-    assert_redirected_to rigs_path
+  test "should get udpate" do
+    get :udpate
+    assert_response :success
   end
+
+  test "should get destroy" do
+    get :destroy
+    assert_response :success
+  end
+
 end
